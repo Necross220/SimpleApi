@@ -16,7 +16,7 @@ class Contacts extends connection
         $email = isset($_POST['email']) ? filter_var($_POST['email'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : '';
 
         //Sub-Sanitized inputs -> Numbers
-        $phones = $_POST['phones'] ? : [];
+        $phones = $_POST['phones'] ?? [];
 
         switch ($method):
             case 'create':
