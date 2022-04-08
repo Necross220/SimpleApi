@@ -1,11 +1,13 @@
 //READ
+//http://localhost/Contacts
+//http://localhost/Contacts/read -> TODOS
 let data = {
-        //http://localhost/Contacts/read -> TODOS
         id: 1 // INDIVIDUAL
 }
 
 //CREATE
 let data = {
+        //http://localhost/Contacts/create
         name: 'David',
         lastname: 'Uri',
         email: 'UPDATED@EMAIL.com',
@@ -16,6 +18,7 @@ let data = {
 }
 
 //UPDATE
+//http://localhost/Contacts/update
 let data = {
         id: 1,
         name: 'UPDARTED NAME',
@@ -24,6 +27,7 @@ let data = {
 }
 
 //DELETE
+//http://localhost/Contacts/delete
 let data = {
         //Is an update changing the status cause we are not suppose to delete stuff from the database
         id: 1
