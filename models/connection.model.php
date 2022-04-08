@@ -2,7 +2,7 @@
 
 class Connection
 {
-    protected PDO $conn;
+    protected $conn;
 
     public function __construct()
     {

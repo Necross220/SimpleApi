@@ -2,7 +2,7 @@
 
 class Router extends connection
 {
-    Protected Mixed $controller;
+    Protected $controller;
 
     /**
      * Parses the URL address using slashes and returns params as array
