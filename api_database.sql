@@ -84,3 +84,10 @@ BEGIN
         modified_at = CURRENT_TIMESTAMP
     WHERE id = _id;
 END;
+
+INSERT INTO status (id, name, active, created_at) VALUES (1, 'Activo', true, '2022-04-06 21:24:46');
+INSERT INTO status (id, name, active, created_at) VALUES (2, 'Inactivo', true, '2022-04-06 21:24:46');
+
+INSERT INTO contacts (name, lastname, email) VALUES ('Obed', 'Uri', 'enobe220@gmail.com');
+
+INSERT INTO contact_phones (contact_id, number) VALUES (LAST_INSERT_ID(), 809000000);
