@@ -15,8 +15,8 @@ class Contacts extends connection
         $lastname = isset($_POST['lastname']) ? filter_var($_POST['lastname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : '';
         $email = isset($_POST['email']) ? filter_var($_POST['email'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : '';
 
-        //Sub-Sanitized inputs
-        $phones = $_POST['phones'] ?? [];
+        //Sub-Sanitized inputs -> Numbers
+        $phones = $_POST['phones'] ? : [];
 
         switch ($method):
             case 'create':
@@ -44,7 +44,7 @@ class Contacts extends connection
      * @return void echoes JSON results
      * @throws JsonException
      */
-    private function create(string $name, string $lastname, string $email, mixed $phones): void
+    private function create(string $name, string $lastname, string $email, array $phones): void
     {
 
         //Checks if the name and lastname are in the correct format
@@ -66,7 +66,7 @@ class Contacts extends connection
             foreach($phones as $phone){
                 $data_set = $this->conn->prepare('CALL CreatePhones(:contact_id, :number)');
                 $data_set->bindParam(':contact_id', $contact_id, PDO::PARAM_INT);
-                $data_set->bindParam(':number', $phone, PDO::PARAM_STR);
+                $data_set->bindParam(':number', $phone);
                 $data_set->execute();
             }
 

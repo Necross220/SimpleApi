@@ -9,7 +9,10 @@ let data = {
         name: 'David',
         lastname: 'Uri',
         email: 'UPDATED@EMAIL.com',
-        phones: ["809000001", "809000002", "809000003"]
+        //POSTMAN CRAZINESS WITH NUMBER
+        "phones[0]": 8090000001,
+        "phones[1]": 8090000002,
+        "phones[2]": 8090000003
 }
 
 //UPDATE
